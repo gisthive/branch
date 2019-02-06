@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Sub_categories extends Model
+class Ph_customer extends Model
 {
     //
 }
