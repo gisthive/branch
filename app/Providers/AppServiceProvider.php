@@ -25,5 +25,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+        $meddb = new \App\Ph_sub_categories;
+        $med = $meddb->where('oid', 3)->get();
+        $cat = \App\Ph_categories::all();
+        view()->share('med', $med);
+        view()->share('cat', $cat);
     }
 }
