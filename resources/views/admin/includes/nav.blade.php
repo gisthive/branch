@@ -12,6 +12,7 @@
       <a class="nav-item nav-link" href="/edit/products"> Products </a>
       <a class="nav-item nav-link" href="/edit/faq"> Faq </a>
       <a class="nav-item nav-link" href="/edit/orders"> Orders </a>
+      <a class="nav-item nav-link" href="{{route('roles')}}"> Roles </a>
     </div>
   </div>
 </nav>

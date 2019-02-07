@@ -46,6 +46,7 @@ Route::get('/edit/subcategory', 'AdminController@subcategory');
 Route::get('/edit/products', 'AdminController@products');
 Route::get('/edit/orders', 'AdminController@orders');
 Route::get('/edit/faq', 'AdminController@faq');
+Route::get('/edit/roles', 'AdminController@roles')->name('roles');
 
 Route::post('/edit/store/category', 'AdminController@storeCategory');
 Route::post('/edit/store/delete', 'AdminController@destroyCategory');
@@ -58,6 +59,7 @@ Route::post('/edit/store/prodelete', 'AdminController@destroyProduct');
 Route::post('/edit/store/faqdelete', 'AdminController@destroyFaq');
 Route::post('/edit/store/faqedit', 'AdminController@updateFaq');
 Route::post('/edit/store/faq', 'AdminController@storeFaq'); 
+Route::post('/edit/role/delete', 'AdminController@destroyRole')->name('destroy_role');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

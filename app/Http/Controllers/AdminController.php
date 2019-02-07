@@ -15,7 +15,7 @@ class AdminController extends Controller
      */
 
     public function home(){
-        $products = new \App\Ph_products;
+        $products = new \App\Ph_roles;
         $featured = $products->where('type', 'like', 'Featured')->limit(4)->get();
         $popular = $products->where('type', 'like', 'Popular Products')->limit(4)->get();
         $tips = $products->where('type', 'like', 'Health Tip')->limit(4)->get();
@@ -187,6 +187,36 @@ class AdminController extends Controller
     public function displayFaq(){
         $res_faq = \App\Ph_faq::all();
         return view('pages.faq', compact('res_faq'));
+    }
+
+    public function roles(){
+        $role = \App\Ph_roles::all();
+        $products = \App\Ph_products::all();
+        return view('admin.pages.roles', compact('role', 'products'));
+    }
+
+    public function storeRole(request $request){
+        $post = new \App\Ph_roles;
+        $productFetch = new \App\Ph_products;
+        $id = request('id');
+        $getId = $productFetch->where('id', '==', $id)->get();
+        $post->type = request('type');
+        $post->name = $getId['name'];
+        $post->slug = $getId['slug'];
+        $post->regular_price = $getId['regular_price'];
+        $post->sale_price = $getId['sale_price'];
+        $post->stock_quantity = $getId['stock_quantity'];
+        $post->category = $getId['category'];
+        $post->images = $getId['images'];
+        $post->save();
+        return redirect(routes('roles'));
+    }
+
+    public function destroyRole(){
+        $id = request('id');
+        $del = \App\Ph_roles::find($id);
+        $del->delete();
+        return redirect(route('destroy_role'))->with('success','Information has been  deleted');
     }
 
   }   
