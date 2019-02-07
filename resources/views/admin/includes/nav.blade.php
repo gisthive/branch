@@ -5,13 +5,13 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/admin">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="/admin/category">Categories</a>
-      <a class="nav-item nav-link" href="/admin/customer"> Customer </a>
-      <a class="nav-item nav-link" href="/admin/subcategory"> Sub-Category </a>
-      <a class="nav-item nav-link" href="/admin/products"> Products </a>
-      <a class="nav-item nav-link" href="/admin/faq"> Faq </a>
-      <a class="nav-item nav-link" href="/admin/orders"> Orders </a>
+      <a class="nav-item nav-link active" href="/edit">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/edit/category">Categories</a>
+      <a class="nav-item nav-link" href="/edit/customer"> Customer </a>
+      <a class="nav-item nav-link" href="/edit/subcategory"> Sub-Category </a>
+      <a class="nav-item nav-link" href="/edit/products"> Products </a>
+      <a class="nav-item nav-link" href="/edit/faq"> Faq </a>
+      <a class="nav-item nav-link" href="/edit/orders"> Orders </a>
     </div>
   </div>
 </nav>

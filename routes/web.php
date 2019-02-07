@@ -39,6 +39,26 @@ Route::get('/remove/{id}', 'CartController@getRemoveItem')->name('product.remove
 Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay'); 
 Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
 
+Route::get('/edit', 'AdminController@index');
+Route::get('/edit/category', 'AdminController@category');
+Route::get('/edit/customer', 'AdminController@customer');
+Route::get('/edit/subcategory', 'AdminController@subcategory');
+Route::get('/edit/products', 'AdminController@products');
+Route::get('/edit/orders', 'AdminController@orders');
+Route::get('/edit/faq', 'AdminController@faq');
+
+Route::post('/edit/store/category', 'AdminController@storeCategory');
+Route::post('/edit/store/delete', 'AdminController@destroyCategory');
+Route::post('/edit/store/edit', 'AdminController@updateCategory');
+Route::post('/edit/store/subcategory', 'AdminController@storeSubcategory');
+Route::post('/edit/store/subedit', 'AdminController@updateSubcategory');
+Route::post('/edit/store/subdelete', 'AdminController@destroySubcategory');
+Route::post('/edit/store/product', 'AdminController@storeProduct');
+Route::post('/edit/store/prodelete', 'AdminController@destroyProduct');
+Route::post('/edit/store/faqdelete', 'AdminController@destroyFaq');
+Route::post('/edit/store/faqedit', 'AdminController@updateFaq');
+Route::post('/edit/store/faq', 'AdminController@storeFaq'); 
+
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

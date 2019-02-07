@@ -44,14 +44,14 @@ class AdminController extends Controller
         $post->save();
 
         //redirect to homepage
-        return redirect('/admin/category');
+        return redirect('/edit/category');
     }
 
     public function destroyCategory(){
         $id = request('id');
         $del = \App\Ph_categories::find($id);
         $del->delete();
-        return redirect('/admin/category')->with('success','Information has been  deleted');
+        return redirect('/edit/category')->with('success','Information has been  deleted');
     }
 
     public function updateCategory()
@@ -60,7 +60,7 @@ class AdminController extends Controller
         $passport= \App\Ph_categories::find($id);
         $passport->name = request('name');
         $passport->save();
-        return redirect('/admin/category');
+        return redirect('/edit/category');
     }
 
     public function customer(){
@@ -81,14 +81,14 @@ class AdminController extends Controller
            $post->name = request('name');
            $post->oid = request('id');
         $post->save();
-        return redirect('/admin/subcategory');
+        return redirect('/edit/subcategory');
     }
 
     public function destroySubcategory(){
         $id = request('id');
         $del = \App\Ph_sub_categories::find($id);
         $del->delete();
-        return redirect('/admin/subcategory')->with('success','Information has been  deleted');
+        return redirect('/edit/subcategory')->with('success','Information has been  deleted');
     }
 
     public function updateSubcategory()
@@ -97,7 +97,7 @@ class AdminController extends Controller
         $passport= \App\Ph_sub_categories::find($id);
         $passport->name = request('name');
         $passport->save();
-        return redirect('/admin/subcategory');
+        return redirect('/edit/subcategory');
     }
 
     public function products(){
@@ -139,14 +139,14 @@ class AdminController extends Controller
         $post->save();
 
         //redirect to homepage
-        return redirect('/admin/products');
+        return redirect('/edit/products');
     }
 
     public function destroyProduct(){
         $id = request('id');
         $del = \App\Ph_products::find($id);
         $del->delete();
-        return redirect('/admin/products')->with('success','Information has been  deleted');
+        return redirect('/edit/products')->with('success','Information has been  deleted');
     }
 
     public function orders(){
@@ -163,7 +163,7 @@ class AdminController extends Controller
         $id = request('id');
         $del = \App\Ph_faq::find($id);
         $del->delete();
-        return redirect('/admin/faq')->with('success','Information has been  deleted');
+        return redirect('/edit/faq')->with('success','Information has been  deleted');
     }
 
     public function updateFaq()
@@ -173,7 +173,7 @@ class AdminController extends Controller
         $passport->title = request('title');
         $passport->body = request('body');
         $passport->save();
-        return redirect('/admin/faq');
+        return redirect('/edit/faq');
     }
 
     public function storeFaq(request $request){
@@ -181,7 +181,7 @@ class AdminController extends Controller
         $post->title = request('title');
         $post->body = request('body');
         $post->save();
-        return redirect('/admin/faq');
+        return redirect('/edit/faq');
     }
 
     public function displayFaq(){
