@@ -17,7 +17,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                            <form action="/admin/store/faq" method="POST">
+                            <form action="{{route('storeFaq')}}" method="POST">
                             {{ csrf_field() }}
                 <div class="form-group">
                     <input type="text" class="form-control" aria-describedby="" placeholder="Enter title" name="title" required> 
@@ -47,7 +47,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                            <form action="/admin/store/faqedit" method="POST">
+                            <form action="{{route('editFaq')}}" method="POST">
                             {{ csrf_field() }}
                 <div>
                     <select name="id" required>
@@ -92,7 +92,7 @@
       <td> {{$faqs['title']}} </td>
       <td> {{$faqs['body']}} </td>
       <td> <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"> edit </button> </td>
-      <form action="/admin/store/faqdelete" method="POST">
+      <form action="{{route('deleteFaq')}}" method="POST">
           {{ csrf_field() }}
           <td> <button type="submit" class="btn btn-danger" name="id" value=" {{$faqs['id']}} ">delete</button> </td>
       </form>

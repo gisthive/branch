@@ -17,7 +17,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                            <form action="/admin/store/category" method="POST">
+                            <form action="{{route('storeCategory')}}" method="POST">
                             {{ csrf_field() }}
                 <div class="form-group">
                     <input type="text" class="form-control" aria-describedby="" placeholder="Enter name" name="name" required> 
@@ -43,7 +43,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                            <form action="/admin/store/edit" method="POST">
+                            <form action="{{route('editCategory')}}" method="POST">
                             {{ csrf_field() }}
                 <div>
                     <select name="id" required>
@@ -83,7 +83,7 @@
       <th scope="row"> {{$cats['id']}} </th>
       <td> {{$cats['name']}} </td>
       <td> <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"> edit </button> </td>
-      <form action="/admin/store/delete" method="POST">
+      <form action="{{route('deleteCategory')}}" method="POST">
           {{ csrf_field() }}
           <td> <button type="submit" class="btn btn-danger" name="id" value=" {{$cats['id']}} ">delete</button> </td>
       </form>

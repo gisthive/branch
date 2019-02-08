@@ -17,7 +17,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                            <form action="/admin/store/product" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('storeProduct')}}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                 <select name="category" required>
                     <option></option>
@@ -109,7 +109,7 @@
       <td> {{$prods['category']}} </td>
       <td> {{$prods['images']}} </td>
       <td> {{$prods['tag']}} </td>
-      <form action="/admin/store/prodelete" method="POST">
+      <form action="{{route('deleteProduct')}}" method="POST">
           {{ csrf_field() }}
           <td> <button type="submit" class="btn btn-danger" name="id" value=" {{$prods['id']}} ">delete</button> </td>
       </form>

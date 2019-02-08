@@ -17,7 +17,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                            <form action="/admin/store/subcategory" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('storeSubcategory')}}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                 <select name="id" required>
                     <option></option>
@@ -49,7 +49,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                            <form action="/admin/store/subedit" method="POST">
+                            <form action="{{route('editSubcategory')}}" method="POST">
                             {{ csrf_field() }}
                 <div>
                     <select name="id" required>
@@ -91,7 +91,7 @@
       <td> {{$cats['oid']}} </th>
       <td> {{$cats['name']}} </td>
       <td> <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit"> edit </button> </td>
-      <form action="/admin/store/subdelete" method="POST">
+      <form action="{{route('deleteSubcategory')}}" method="POST">
           {{ csrf_field() }}
           <td> <button type="submit" class="btn btn-danger" name="id" value=" {{$cats['id']}} ">delete</button> </td>
       </form>

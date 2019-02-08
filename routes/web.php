@@ -44,22 +44,24 @@ Route::get('/edit/category', 'AdminController@category');
 Route::get('/edit/customer', 'AdminController@customer');
 Route::get('/edit/subcategory', 'AdminController@subcategory');
 Route::get('/edit/products', 'AdminController@products');
-Route::get('/edit/orders', 'AdminController@orders');
+Route::get('/edit/orders', 'AdminController@orders')->name('orders');
 Route::get('/edit/faq', 'AdminController@faq');
 Route::get('/edit/roles', 'AdminController@roles')->name('roles');
 
-Route::post('/edit/store/category', 'AdminController@storeCategory');
-Route::post('/edit/store/delete', 'AdminController@destroyCategory');
-Route::post('/edit/store/edit', 'AdminController@updateCategory');
-Route::post('/edit/store/subcategory', 'AdminController@storeSubcategory');
-Route::post('/edit/store/subedit', 'AdminController@updateSubcategory');
-Route::post('/edit/store/subdelete', 'AdminController@destroySubcategory');
-Route::post('/edit/store/product', 'AdminController@storeProduct');
-Route::post('/edit/store/prodelete', 'AdminController@destroyProduct');
-Route::post('/edit/store/faqdelete', 'AdminController@destroyFaq');
-Route::post('/edit/store/faqedit', 'AdminController@updateFaq');
-Route::post('/edit/store/faq', 'AdminController@storeFaq'); 
-Route::post('/edit/role/delete', 'AdminController@destroyRole')->name('destroy_role');
+Route::post('/edit/store/category', 'AdminController@storeCategory')->name('storeCategory');
+Route::post('/edit/store/delete', 'AdminController@destroyCategory')->name('deleteCategory');
+Route::post('/edit/store/edit', 'AdminController@updateCategory')->name('editCategory');
+Route::post('/edit/store/subcategory', 'AdminController@storeSubcategory')->name('storeSubcategory');
+Route::post('/edit/store/subedit', 'AdminController@updateSubcategory')->name('editSubcategory');
+Route::post('/edit/store/subdelete', 'AdminController@destroySubcategory')->name('deleteSubcategory');
+Route::post('/edit/store/product', 'AdminController@storeProduct')->name('storeProduct');
+Route::post('/edit/store/prodelete', 'AdminController@destroyProduct')->name('deleteProduct');
+Route::post('/edit/store/faqdelete', 'AdminController@destroyFaq')->name('deleteFaq');
+Route::post('/edit/store/orderdelete', 'AdminController@destroyOrder')->name('deleteOrder');
+Route::post('/edit/store/faqedit', 'AdminController@updateFaq')->name('editFaq');
+Route::post('/edit/store/faq', 'AdminController@storeFaq')->name('storeFaq'); 
+Route::post('/edit/store/role', 'AdminController@storeRole')->name('storeRole'); 
+Route::post('/edit/role/delete', 'AdminController@destroyRole')->name('delete_role');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

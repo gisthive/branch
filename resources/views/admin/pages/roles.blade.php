@@ -19,7 +19,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                            <form action="/admin/store/category" method="POST">
+                            <form action="{{route('storeRole')}}" method="POST">
                             {{ csrf_field() }}
                 <div class="form-group">
                     <select name="type" required>
@@ -58,6 +58,7 @@
   <thead>
     <tr>
     <th scope="col">#</th>
+    <th scope="col">p#</th>
       <th scope="col">Name</th>
       <th scope="col">Slug</th>
       <th scope="col">Type</th>
@@ -74,6 +75,7 @@
    @foreach ($role as $roles)
     <tr>
       <th scope="row"> {{$roles['id']}} </th>
+      <th scope="row"> {{$roles['pid']}} </th>
       <td> {{$roles['name']}} </td>
       <td> {{$roles['slug']}} </td>
       <td> {{$roles['type']}} </td>

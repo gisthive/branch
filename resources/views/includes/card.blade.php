@@ -4,7 +4,12 @@
     $item['regular_price'] = '';
    } else {
     $item['regular_price'] = '₦'.$item['regular_price'];
-   } ?>
+   }
+   
+   if(isset($home)){
+     $item['id'] = $item['pid'];
+   }
+   ?>
 
   <img src="{{ asset($item['images']) }}" alt="Avatar" style="width:100%">
   <div>

@@ -39,7 +39,7 @@
       <td> {{$orders['transaction_id']}} </td>
       <td> {{$orders['date_id']}} </td>
       <td> {{$orders['items']}} </td>
-      <form action="/admin/store/orderdelete" method="POST">
+      <form action="{{route('orderDelete')}}" method="POST">
           {{ csrf_field() }}
           <td> <button type="submit" class="btn btn-danger" name="id" value=" {{$orders['id']}} ">delete</button> </td>
       </form>

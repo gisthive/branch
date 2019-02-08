@@ -15,6 +15,7 @@ class RolesTable extends Migration
     {
         Schema::create('ph_roles', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('pid');
             $table->string('name');
             $table->string('slug');
             $table->string('type');

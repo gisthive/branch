@@ -7,11 +7,11 @@
       <p class="title" style="color: black"> Confirm Order? </p>
       <p class="subtitle" style="color: black"> Your Order will arrive within 30 minutes of placement. </p>
         <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal" role="form">
-            <input type="hidden" name="email" value="{{$email}}"> {{-- required --}}
-            <input type="hidden" name="orderID" value="{{$rand}}">
+            <input type="hidden" name="email" value="{{$all['email']}}"> {{-- required --}}
+            <input type="hidden" name="orderID" value="{{$all['rand']}}">
             <input type="hidden" name="amount" value="{{Session::get('cart')->totalPrice * 100}}"> {{-- required in kobo --}}
             <input type="hidden" name="quantity" value="{{Session::get('cart')->totalQty}}">
-            <input type="hidden" name="metadata" value="{{ json_encode($array = ['address' => $address, 'city' => $city, 'state' => $state, 'postcode' => $postcode, 'country' => $country, 'name' => $name, 'phone' => $phone, 'notes' => $notes]) }}" > {{-- For other necessary things you want to add to your payload. it is optional though --}}
+            <input type="hidden" name="metadata" value="{{ json_encode($array = ['address' => $all['address'], 'city' => $all['city'], 'state' => $all['state'], 'postcode' => $all['postcode'], 'country' => $all['country'], 'name' => $all['name'], 'phone' => $all['phone'], 'notes' => $all['notes']]) }}" > {{-- For other necessary things you want to add to your payload. it is optional though --}}
             <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
             <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
             {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}

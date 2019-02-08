@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Categories;
+use App\Ph_categories;
 
 class AdminController extends Controller
 {
@@ -16,12 +16,13 @@ class AdminController extends Controller
 
     public function home(){
         $products = new \App\Ph_roles;
+        $home = '1';
         $featured = $products->where('type', 'like', 'Featured')->limit(4)->get();
         $popular = $products->where('type', 'like', 'Popular Products')->limit(4)->get();
         $tips = $products->where('type', 'like', 'Health Tip')->limit(4)->get();
-        $sale = $products->limit(12)->get();
+        $sale = $products->where('type', 'like', 'On Sale')->limit(12)->get();
         $top = $products->where('type', 'like', 'Top Rates')->limit(12)->get();
-        return view('pages.index', compact('featured', 'popular', 'tips', 'sale', 'top'));
+        return view('pages.index', compact('featured', 'popular', 'tips', 'sale', 'top', 'home'));
     } 
 
     public function index()
@@ -149,6 +150,13 @@ class AdminController extends Controller
         return redirect('/edit/products')->with('success','Information has been  deleted');
     }
 
+    public function destroyOrder(){
+        $id = request('id');
+        $del = \App\Ph_products::find($id);
+        $del->delete();
+        return redirect(route('orders'))->with('success','Information has been  deleted');
+    }
+
     public function orders(){
         $order = \App\Ph_orders::all();
         return view('admin.pages.orders', compact('order'));
@@ -199,24 +207,28 @@ class AdminController extends Controller
         $post = new \App\Ph_roles;
         $productFetch = new \App\Ph_products;
         $id = request('id');
-        $getId = $productFetch->where('id', '==', $id)->get();
-        $post->type = request('type');
-        $post->name = $getId['name'];
-        $post->slug = $getId['slug'];
-        $post->regular_price = $getId['regular_price'];
-        $post->sale_price = $getId['sale_price'];
-        $post->stock_quantity = $getId['stock_quantity'];
-        $post->category = $getId['category'];
-        $post->images = $getId['images'];
-        $post->save();
-        return redirect(routes('roles'));
+        $getId = $productFetch->where('id', 'like', $id)->get();
+
+        foreach ($getId as $get) {
+            $post->type = request('type');
+            $post->name = $get['name'];
+            $post->slug = $get['slug'];
+            $post->regular_price = $get['regular_price'];
+            $post->sale_price = $get['sale_price'];
+            $post->stock_quantity = $get['stock_quantity'];
+            $post->category = $get['category'];
+            $post->images = $get['images'];
+            $post->pid = $get['id'];
+        }
+            $post->save();
+            return redirect(route('roles'));
     }
 
     public function destroyRole(){
         $id = request('id');
         $del = \App\Ph_roles::find($id);
         $del->delete();
-        return redirect(route('destroy_role'))->with('success','Information has been  deleted');
+        return redirect(route('roles'))->with('success','Information has been  deleted');
     }
 
   }   
