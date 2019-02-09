@@ -53,9 +53,11 @@ class CartController extends Controller
             $country = '';
         } else {
             $email = auth()->email;
-            $account = \App\Customer;
+            $account = \App\Ph_customer;
+            $user = \App\User;
             $account = $account->where('email', '==', $email);
-            $name = auth()->name;
+            $user = $user->where('email', '==', $email);
+            $name = $user['name'];
             $phone = $account['phone'];
             $address = $account['address_1'];
             $address2 = $account['address_2'];
