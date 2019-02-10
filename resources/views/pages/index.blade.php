@@ -22,7 +22,7 @@
     <p class="title">Top Rates</p>
     <div class="content columns is-multiline is-mobile">
           @foreach ($top as $item)
-            <section class="column is-one-third">
+            <section class="column is-one-third-desktop is-half-mobile">
               @include('includes.card')
             </section>  
             @endforeach
