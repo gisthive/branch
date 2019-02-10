@@ -17,7 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/home/{name}', function($name) {
+Route::get('/home/{name}', ['middleware' => 'cors'], function($name) {
     $products = new \App\Ph_roles;
 
     if($name == 'featured'){

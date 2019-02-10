@@ -33,24 +33,6 @@
   </div>
 </div>
 
-<div class="is-hidden-desktop is-hoverable dropdown" style="margin-top: 10px">
-<div class="dropdown-trigger">
-  <button class="button is-primary is-rounded" aria-haspopup="true" aria-controls="dropdown-menu">
-    <span class="icon is-small">
-      <i class="fa fa-search" aria-hidden="true"></i>
-    </span>
-  </button>
-</div>
-<div class="dropdown-menu" id="dropdown-menu" role="menu">
-  <div class="dropdown-content">
-  <form action="/search" method="POST">
-  {{csrf_field()}}
-    <input name="q" class="input is-rounded" type="search" placeholder="Find Drugs...">
-  </form>
-  </div>
-</div>
-</div>
-
 <div class="navbar-item is-hidden-desktop">
 <div class="field is-grouped">
   <p class="control">
