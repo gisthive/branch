@@ -10,13 +10,13 @@
             <li><a href="/category/{{$cats['name']}} ">{{$cats['name']}}</a></li>
         @endforeach    
         </ul>
- <div class="is-hidden-desktop">
+    </div> 
+    <div class="is-hidden-desktop">
     <form action="/search" method="POST">
     {{csrf_field()}}
         <input name="q" class="input is-rounded" type="search" placeholder="Find Drugs...">
     </form>
   </div>
-    </div> 
    <section> 
     <div class="container is-fluid">
         @yield('content')
