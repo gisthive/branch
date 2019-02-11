@@ -33,12 +33,16 @@ Route::middleware('cors')->get('/home/{name}', function($name) {
     }
 });
 
-Route::get('/categories', function() {
+Route::middleware('cors')->get('/categories', function() {
     return \App\Ph_categories::all();
 });
 
-Route::get('/products', function() {
+Route::middleware('cors')->get('/products', function() {
     return \App\Ph_products::all();
+});
+
+Route::middleware('cors')->get('/faq', function() {
+    return \App\Ph_faq::all();
 });
 
 
