@@ -12,7 +12,7 @@
         </ul>
     </div> 
     <div class="is-hidden-desktop">
-    <form action="/search" method="POST">
+    <form class="searchBar" action="/search" method="POST">
     {{csrf_field()}}
         <input name="q" class="input is-rounded" type="search" placeholder="Find Drugs...">
     </form>
