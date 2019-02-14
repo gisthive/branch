@@ -9,7 +9,7 @@ class DescriptionController extends Controller
     public function index($id)
     {
         $products = new \App\Ph_products;
-        $description = $products->where('id', 'like', 1)->get();
+        $description = $products->where('id', 'like', $id)->get();
         $categories = "";
         $name = "";
         $desc = "";
