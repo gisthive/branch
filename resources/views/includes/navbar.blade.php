@@ -54,10 +54,13 @@
 
 
 
-    <div class="navbar-burger burger" data-target="pharmNav">
+    <!-- <div class="navbar-burger burger" data-target="pharmNav">
       <span></span>
       <span></span>
       <span></span>
+    </div> -->
+    <div class="navbar-burger burger navbar-item">
+      <a class="button is-primary is-right" href="/notification"><i class="fa fa-bell"></i></a>
     </div>
 
     

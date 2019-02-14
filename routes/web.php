@@ -20,7 +20,7 @@ Route::get('/description/{id}', 'DescriptionController@index')->name('descriptio
 Route::get('/search', 'SearchController@index');
 Route::post('/search', 'SearchController@show');
 Route::get('/cart', 'CartController@index');
-Route::get('/account', 'AccountController@index');
+Route::get('/account', 'AccountController@index')->name('account');
 Route::post('/confirm', 'ConfirmController@index')->name('confirm');
 Route::get('/help', 'HelpController@index');
 Route::get('/review', 'ReviewController@index');

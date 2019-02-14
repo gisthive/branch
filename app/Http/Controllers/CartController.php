@@ -37,7 +37,7 @@ class CartController extends Controller
     public function getCheckout()
     {
         if (!Session::has('cart')){
-            return view('pages.cart');
+            return view('pages.cart')->withErrors('Your Account Details are empty! Please complete it for faster checkout <a href="/account"> here </a> ');
         }
 
         if(! auth()->check()){

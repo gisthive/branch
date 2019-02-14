@@ -25,10 +25,8 @@ class RegistrationController extends Controller
              'password' => bcrypt($data['password']),
              ]);
 
-        //sign in
         auth()->login($user, true); 
 
-        //redirect
-            return redirect('/');
+        return redirect(route('account'))->withErrors('Complete your Account Details for faster checkout!');
     }
 }

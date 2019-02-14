@@ -26,6 +26,6 @@ class SessionsController extends Controller
             ]);
         }
 
-        return redirect('/');
+        return redirect('/')->withErrors('Your Account Details are empty! Please complete it for faster checkout <a href="/account"> here </a> ');
     }
 }
