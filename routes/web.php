@@ -16,7 +16,7 @@ Route::get('/home', 'AdminController@home');
 Route::get('/signup', 'RegistrationController@create');
 Route::get('/login', 'SessionsController@create');
 Route::get('/category/{name}', 'CategoryController@index');
-Route::get('/description/{id}', 'DescriptionController@index')->name('description');
+Route::get('/description/{id}/{name}', 'DescriptionController@index')->name('description');
 Route::get('/search', 'SearchController@index');
 Route::post('/search', 'SearchController@show');
 Route::get('/cart', 'CartController@index');

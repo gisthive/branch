@@ -16,13 +16,15 @@ class AdminController extends Controller
 
     public function home(){
         $products = new \App\Ph_roles;
+        $posts = new \App\Posts;
         $home = '1';
         $featured = $products->where('type', 'like', 'Featured')->limit(4)->get();
         $popular = $products->where('type', 'like', 'Popular Products')->limit(4)->get();
         $tips = $products->where('type', 'like', 'Health Tip')->limit(4)->get();
         $sale = $products->where('type', 'like', 'On Sale')->limit(12)->get();
         $top = $products->where('type', 'like', 'Top Rates')->limit(12)->get();
-        return view('pages.index', compact('featured', 'popular', 'tips', 'sale', 'top', 'home'));
+        $posts = $posts->limit(4)->get();
+        return view('pages.index', compact('featured', 'popular', 'tips', 'sale', 'top', 'home', 'posts'));
     } 
 
     public function index()
