@@ -225,6 +225,7 @@ class AdminController extends Controller
             $post->save();
             return redirect(route('roles'));
     }
+    
 
     public function destroyRole(){
         $id = request('id');

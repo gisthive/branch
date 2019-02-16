@@ -19,6 +19,7 @@
   </div>
   <div class="searchBar">
     @include ('includes.errors')
+    @include ('includes.success')
   </div>
    <section> 
     <div class="container is-fluid">

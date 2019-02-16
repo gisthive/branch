@@ -20,16 +20,18 @@ Route::get('/description/{id}/{name}', 'DescriptionController@index')->name('des
 Route::get('/search', 'SearchController@index');
 Route::post('/search', 'SearchController@show');
 Route::get('/cart', 'CartController@index');
-Route::get('/account', 'AccountController@index')->name('account');
+Route::get('/account', 'AccountController@index')->name('account')->middleware('auth');
 Route::post('/confirm', 'ConfirmController@index')->name('confirm');
 Route::get('/help', 'HelpController@index');
 Route::get('/review', 'ReviewController@index');
 Route::get('/privacy', 'TermsController@index');
 Route::get('/logout', 'SessionsController@destroy');
 Route::get('/faq', 'AdminController@displayFaq');
+Route::get('/professional', 'ProfessionalController@index')->middleware('auth')->name('professional');
+Route::get('/notification', 'NotificationController@index')->middleware('auth')->name('notification');
 
 Route::post('signup', 'RegistrationController@store');
-Route::post('/login', 'SessionsController@verify');
+Route::post('/login', 'SessionsController@verify')->name('login');
 
 Route::get('/add-to-cart/{id}', 'CartController@store')->name('product.add');
 Route::get('/checkout', 'CartController@getCheckout');
@@ -62,6 +64,8 @@ Route::post('/edit/store/faqedit', 'AdminController@updateFaq')->name('editFaq')
 Route::post('/edit/store/faq', 'AdminController@storeFaq')->name('storeFaq'); 
 Route::post('/edit/store/role', 'AdminController@storeRole')->name('storeRole'); 
 Route::post('/edit/role/delete', 'AdminController@destroyRole')->name('delete_role');
+Route::post('/edit/role/account', 'AccountController@editAccount')->name('editAccount')->middleware('auth');
+Route::post('/edit/role/accountImage', 'AccountController@editAccountImage')->name('editAccountImage')->middleware('auth');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

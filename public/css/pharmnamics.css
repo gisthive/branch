@@ -28,3 +28,12 @@
     margin-left: 10px;
     margin-right: 10px;
   }
+
+  .follow{
+    bottom: 0;
+    position: absolute;
+  }
+
+  .circle{
+    border-radius: 50%;
+  }

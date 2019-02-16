@@ -15,11 +15,11 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('ph_customers', function (Blueprint $table) {
             $table->string('id');
-            $table->string('role');
-            $table->string('image');
+            $table->string('role')->nullable->default(null);
+            $table->string('image')->nullable->default(null);;
             $table->string('address_1');
-            $table->string('address_2');
-            $table->string('work');
+            $table->string('address_2')->nullable->default(null);;
+            $table->string('work')->nullable->default(null);;
             $table->string('city');
             $table->string('state');
             $table->string('postcode');

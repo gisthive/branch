@@ -1,7 +1,7 @@
 <nav class="navbar is-transparent is-primary">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
-      <img src="/images/logo3.png" alt="Pharmnamics" width="30" height="30"><b> Pharmnamics </b>
+      <img src="/images/logo4.png" alt="Pharmnamics logo" height="30">
     </a>
     
     <div class="is-hidden-desktop is-hoverable dropdown" style="margin-top: 10px">
@@ -46,6 +46,22 @@
       </span>
       <span>
       Cart
+      </span>
+    </a>
+  </p>
+</div>
+</div>
+
+<div class="navbar-item is-hidden-desktop">
+<div class="field is-grouped">
+  <p class="control">
+    <a href="{{route('notification')}}" class="button 
+    @if(Session::has('notification'))
+    badge
+    @endif
+     is-primary is-inverted is-rounded" data-badge=" {{ Session::has('notification') ? Session::get('notification')->totalQty : '' }} ">
+      <span class="icon">
+        <i class="fa fa-bell"></i>
       </span>
     </a>
   </p>
@@ -119,6 +135,23 @@
               </span>
               <span>
               Cart
+              </span>
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a href="{{route('notification')}}" class="button 
+            @if(Session::has('notification'))
+            badge
+            @endif
+             is-primary is-inverted is-rounded" data-badge=" {{ Session::has('notification') ? Session::get('notification')->totalQty : '' }} ">
+              <span class="icon">
+                <i class="fa fa-bell
+                "></i>
               </span>
             </a>
           </p>

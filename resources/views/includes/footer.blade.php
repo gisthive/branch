@@ -3,7 +3,7 @@
         <div class="columns">
             <div class="column">
                 <div class="footer-logo">
-                    <img src="{{url('/')}}/images/logo3.png" />
+                    <img src="{{url('/')}}/images/logo4.png" />
                 </div>
             </div>
             <div class="column">
@@ -12,8 +12,8 @@
                         <h3>Contact</h3>
                     </div>
                     <ul class="link-list">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">hello@pharmnamics.com</a></li>
+                        <li><a href="https://goo.gl/forms/sLuLMRFa0CxT9itv1">Contact Us</a></li>
+                        <li><a href="mailto:-hello@pharmnamics.com"> Mail Us </a></li>
                     </ul>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                     <ul class="link-list">
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Professional Account</a></li>
+                        <li><a href="/professional">Professional Account</a></li>
                         <li><a href="#">Blog</a></li>
                     </ul>
                 </div>
@@ -37,7 +37,6 @@
                     </div>
                     <ul class="link-list">
                         <li><a href="#">Medicines</a></li>
-                        <li><a href="#">Pharmaceuticals</a></li>
                         <li><a href="#">Prescriptions</a></li>
                         <li><a> Childs Health </a></li>
                         <li><a> Home Care </a></li>
