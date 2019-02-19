@@ -29,7 +29,6 @@
                  @if ($address2 != '')
                     <span><input name="address" value="{{$address}}" type="radio" class="input is-rounded" required> Address 1 </span>
                     <span><input name="address" value="{{$address2}}" type="text" class="input is-rounded" required> Address 2 </span>
-                    <span><input name="address" value="{{$work}}" type="text" class="input is-rounded"  required> Work Address </span>
                 @else
                     <div><input name="address" value="{{$address}}" type="text" class="input is-rounded" placeholder="Delivery Address" required></div><br> 
                 @endif
@@ -65,7 +64,7 @@
     
   </div>
   <center class="card is-extensible is-mobile column is-12" style="position: fixed; bottom: 0; z-index: 1">
-              <button class="is-primary button is-rounded" type="submit" value="Pay Now!">
+              <button class="is-primary button is-rounded" style="width: 50%" type="submit" value="Pay Now!">
               <span> Submit Order </span>
               </button>
             </center><br>

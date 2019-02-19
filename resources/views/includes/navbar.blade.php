@@ -1,7 +1,7 @@
 <nav class="navbar is-transparent is-primary">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
-      <img src="/images/logo4.png" alt="Pharmnamics logo" height="30">
+      <img src="/images/logo6.jpg" alt="Pharmnamics logo" height="30">
     </a>
     
     <div class="is-hidden-desktop is-hoverable dropdown" style="margin-top: 10px">
