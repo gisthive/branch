@@ -18,7 +18,9 @@
             {{csrf_field()}}
             <input type="file" name="file" class="input is-outline is-round" required/><hr>
             <button type="submit" class="button is-round is-outline"> Change Image </button>
+            
           </form>
+          <a href="{{route('order')}}" class="button is-primary is-right is-round is-outline"> Order History </a>
         </div>
       </article>
     </div>

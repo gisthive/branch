@@ -31,10 +31,8 @@ class PaymentController extends Controller
         // dd($paymentDetails['data']);
         $recieved = $paymentDetails['data']['amount'] / 100;
         $expected = $paymentDetails['data']['metadata']['price'];
-        $item = "";
-        foreach($paymentDetails['data']['metadata']['items']['id'] as $item){
-            $item .= $paymentDetails['data']['metadata']['items']['id'].', ';
-        }
+        $item = serialize($paymentDetails['data']['metadata']['items'][1]['item']['id']);
+        
 
         $order = new \App\Ph_orders;
         if($recieved == $expected){

@@ -29,7 +29,7 @@ Route::get('/logout', 'SessionsController@destroy');
 Route::get('/faq', 'AdminController@displayFaq');
 Route::get('/professional', 'ProfessionalController@index')->middleware('auth')->name('professional');
 Route::get('/notification', 'NotificationController@index')->middleware('auth')->name('notification');
-Route::get('/order/{id}', 'OrderController@index')->middleware('auth')->name('order');
+Route::get('/order', 'OrderController@index')->middleware('auth')->name('order');
 
 Route::post('signup', 'RegistrationController@store');
 Route::post('/login', 'SessionsController@verify')->name('login');
