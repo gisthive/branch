@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     @include('includes.head') 
+    @include('includes.chat')
 <body>
 
     @include('includes.navbar')
@@ -22,6 +23,8 @@
     @include ('includes.success')
   </div>
    <section> 
+   
+    @include ('includes.hero')
     <div class="container is-fluid">
         @yield('content')
     </div>    

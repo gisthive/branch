@@ -3,6 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> Pharmnamics </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/images/logo3.png" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{url('/')}}/css/bulma.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{url('/')}}/css/icons.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{url('/')}}/css/pharmnamics.css" />
