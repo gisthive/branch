@@ -23,8 +23,9 @@
     @include ('includes.success')
   </div>
    <section> 
-   
+   <div>
     @include ('includes.hero')
+   </div> 
     <div class="container is-fluid">
         @yield('content')
     </div>    
