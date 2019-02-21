@@ -23,7 +23,7 @@
     @include ('includes.success')
   </div>
    <section> 
-   <div>
+   <div><br>
     @include ('includes.hero')
    </div> 
     <div class="container is-fluid">
