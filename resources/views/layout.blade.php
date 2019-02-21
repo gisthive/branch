@@ -23,6 +23,7 @@
    </div>  
    <!-- end hero component -->
    <!-- search bar -->
+   <br>
     <div class="is-hidden-desktop">
     <form class="searchBar" action="/search" method="POST">
     {{csrf_field()}}

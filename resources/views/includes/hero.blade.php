@@ -1,4 +1,4 @@
-<section class="hero is-primary is-bold">
+<section class="hero is-primary is-bold" style="margin-top: -25px">
   <div class="hero-body">
     <div class="container">
       <h2 class="subtitle">
