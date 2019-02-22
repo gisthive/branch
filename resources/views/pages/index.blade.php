@@ -1,5 +1,8 @@
 @extends ('layout')
 
+@section('styles')
+    <link rel="stylesheet" type="text/css" media="screen" href="{{url('/')}}/css/bulma-carousel.min.css" />
+@endsection    
 
 @section ('hero')
   <div>
@@ -93,5 +96,9 @@
         </div>
       </article>
     </div>
+
+    <script>
+      $("#Home").addClass("is-active");
+    </script>
 
 @endsection

@@ -19,4 +19,8 @@
     </div>
     </article>
   </div>
+
+  <script>
+    $("#{{$name}}").addClass("is-active");
+  </script>
 @endsection

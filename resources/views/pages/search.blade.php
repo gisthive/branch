@@ -9,7 +9,7 @@
             <div class="control has-icons-left has-icons-right">
           <form action="/search" method="POST">
           {{csrf_field()}}
-            <input name="q" class="input is-rounded" value="{{$term}}" type="search" placeholder="Find Drugs...">
+            <input name="q" class="input is-rounded" value="{{$term}}" type="search" placeholder="Search Medication...">
             <span class="icon is-small is-left">
               <i class="fa fa-search"></i>
             </span>

@@ -7,8 +7,9 @@
     @include('includes.navbar')
     <div class="tabs is-centered">
         <ul>
+            <li id="Home"><a href="/"> Home </a></li>
         @foreach ($cat as $cats)
-            <li><a href="/category/{{$cats['name']}} ">{{$cats['name']}}</a></li>
+            <li id="{{$cats['name']}}"><a href="/category/{{$cats['name']}} ">{{$cats['name']}}</a></li>
         @endforeach    
         </ul>
     </div>
@@ -25,10 +26,7 @@
    <!-- search bar -->
    <br>
     <div class="is-hidden-desktop">
-    <form class="searchBar" action="/search" method="POST">
-    {{csrf_field()}}
-        <input name="q" class="input is-rounded" type="search" placeholder="Find Drugs...">
-    </form>
+        @include ('includes.search')
   </div>
   <!-- end search bar -->
   <!-- each page content -->

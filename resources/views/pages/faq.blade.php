@@ -1,5 +1,9 @@
 @extends ('layout')
 
+@section ('styles')
+  <link rel="stylesheet" type="text/css" media="screen" href="{{url('/')}}/css/bulma-accordion.min.css" />
+@endsection
+
 @section ('content')
 <section class="accordions">
 @foreach($res_faq as $faq)

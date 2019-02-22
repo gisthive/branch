@@ -8,8 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="{{url('/')}}/css/icons.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{url('/')}}/css/pharmnamics.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{url('/')}}/css/bulma-badge.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="{{url('/')}}/css/bulma-carousel.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="{{url('/')}}/css/bulma-accordion.min.css" />
+    @yield('styles')
     <script src="{{url('/')}}/js/jquery.js"></script>
     <script src="{{url('/')}}/js/app.js"></script>
     <script src="{{url('/')}}/js/bulma-carousel.min.js"></script>
