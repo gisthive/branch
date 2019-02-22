@@ -13,4 +13,8 @@ class OrderController extends Controller
         $orders = $ordersort->where('customer_id', '==', Auth::user()->email)->get();
         return view('pages.order', compact('orders'));
     }
+
+    public function thanks(){
+        return view('pages.order_thanks');
+    }
 }

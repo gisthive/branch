@@ -27,7 +27,7 @@ class CreateOrdersTable extends Migration
             $table->string('payment_method');
             $table->string('transaction_id');
             $table->string('date_id');
-            $table->string('items');
+            $table->string('items', 1000000);
             $table->timestamps();
         });
     }

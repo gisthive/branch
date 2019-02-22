@@ -25,10 +25,10 @@
         <div class="is-12 columns is-extensible is-mobile">
             <div class="column">
             <form method="POST" action="{{ route('confirm') }}" accept-charset="UTF-8" class="form-horizontal" role="form">
-                <div><label> Select delivery address </label></div><br>
+                <div><label><b> Select delivery address </b></label></div>
                  @if ($address2 != '')
-                    <span><input name="address" value="{{$address}}" type="radio" class="input is-rounded" required> Address 1 </span>
-                    <span><input name="address" value="{{$address2}}" type="text" class="input is-rounded" required> Address 2 </span>
+                    <span><input name="address" value="{{$address}}" type="radio" class="is-rounded" required> {{$address}} </span>
+                    <span><input name="address" value="{{$address2}}" type="radio" class="is-rounded" required> {{$address2}} </span>
                 @else
                     <div><input name="address" value="{{$address}}" type="text" class="input is-rounded" placeholder="Delivery Address" required></div><br> 
                 @endif

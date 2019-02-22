@@ -18,9 +18,9 @@
   </div>
    <section> 
    <!-- hero component -->
-   <div>
-    @include ('includes.hero')
-   </div>  
+   @if (!Auth::check())
+    @yield('hero') 
+   @endif  
    <!-- end hero component -->
    <!-- search bar -->
    <br>

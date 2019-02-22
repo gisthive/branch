@@ -30,6 +30,7 @@ Route::get('/faq', 'AdminController@displayFaq');
 Route::get('/professional', 'ProfessionalController@index')->middleware('auth')->name('professional');
 Route::get('/notification', 'NotificationController@index')->middleware('auth')->name('notification');
 Route::get('/order', 'OrderController@index')->middleware('auth')->name('order');
+Route::get('/order/thanks/{id}', 'OrderController@thanks')->middleware('auth')->name('orderThanks');
 
 Route::post('signup', 'RegistrationController@store');
 Route::post('/login', 'SessionsController@verify')->name('login');

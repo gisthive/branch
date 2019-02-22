@@ -1,6 +1,12 @@
 @extends ('layout')
 
 
+@section ('hero')
+  <div>
+    @include ('includes.hero')
+  </div>
+@endsection  
+
 
 @section ('content')
 

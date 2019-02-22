@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Session;
+use Auth;
 
 class CartController extends Controller
 {
@@ -52,12 +53,9 @@ class CartController extends Controller
             $postcode = '';
             $country = '';
         } else {
-            $email = auth()->email;
-            $account = \App\Ph_customer;
-            $user = \App\User;
-            $account = $account->where('email', '==', $email);
-            $user = $user->where('email', '==', $email);
-            $name = $user['name'];
+            $account = new \App\Ph_customer;
+            $account = $account->where('id', '=', Auth::user()->email)->get()->first();
+            $name = Auth::user()->name;
             $phone = $account['phone'];
             $address = $account['address_1'];
             $address2 = $account['address_2'];
@@ -65,14 +63,14 @@ class CartController extends Controller
             $city = $account['city'];
             $state = $account['state'];
             $postcode = $account['postcode'];
-            $country = $country['country'];
+            $country = $account['country'];
         }
 
         $oldCart = Session::get('cart');
         $cart = new \App\Cart($oldCart);
         $total = $cart->totalPrice;
         $rand = rand();
-        return view('pages.checkout', ['address' => $address, 'address2' => $address, 'work' => $work, 'city' => $city, 'state' => $state, 'postcode' => $postcode, 'country' => $country, 'total' => $total, 'products' => $cart->items, 'qty' => $cart->totalQty, 'email' => $email, 'name' => $name, 'phone' => $phone, 'rand' => $rand,]);
+        return view('pages.checkout', ['address' => $address, 'address2' => $address2, 'work' => $work, 'city' => $city, 'state' => $state, 'postcode' => $postcode, 'country' => $country, 'total' => $total, 'products' => $cart->items, 'qty' => $cart->totalQty, 'email' => Auth::user()->email, 'name' => $name, 'phone' => $phone, 'rand' => $rand,]);
     }
 
     public function getReduceByOne($id) {

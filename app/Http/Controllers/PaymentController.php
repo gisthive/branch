@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Paystack;
+use Session;
 
 class PaymentController extends Controller
 {
@@ -28,14 +29,15 @@ class PaymentController extends Controller
     {
         $paymentDetails = Paystack::getPaymentData();
 
-        // dd($paymentDetails['data']);
+        // dd($paymentDetails['data']['metadata']['items']);
         $recieved = $paymentDetails['data']['amount'] / 100;
         $expected = $paymentDetails['data']['metadata']['price'];
-        $item = serialize($paymentDetails['data']['metadata']['items'][1]['item']['id']);
+        $item = serialize($paymentDetails['data']['metadata']['items']);
         
 
         $order = new \App\Ph_orders;
         if($recieved == $expected){
+            Session::forget('cart');
             $order->status = $paymentDetails['data']['status'];
             $order->discount = null;
             $order->total = $expected;
@@ -50,7 +52,7 @@ class PaymentController extends Controller
             $order->date_id = $paymentDetails['data']['transaction_date'];
             $order->items = $item;
             $order->save();
-            return redirect()->route('order')->with('success', 'Order placed succesfully!');
+            return redirect()->route('order_thanks', ['id' => $paymentDetails['data']['reference']])->with('success', 'Order placed succesfully!');
         } else {
             return redirect()->route('order')->withErrors('Payment process failed. An error occured!');
         }
