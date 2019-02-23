@@ -64,7 +64,7 @@
     
   </div>
   <center class="card is-extensible is-mobile column is-12" style="position: fixed; bottom: 0; z-index: 1">
-              <button class="is-primary button is-rounded" style="width: 50%" type="submit" value="Pay Now!">
+              <button class="is-primary button is-rounded" type="submit" value="Pay Now!">
               <span> Submit Order </span>
               </button>
             </center><br>
