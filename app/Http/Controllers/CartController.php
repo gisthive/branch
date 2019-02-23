@@ -64,13 +64,14 @@ class CartController extends Controller
             $state = $account['state'];
             $postcode = $account['postcode'];
             $country = $account['country'];
+            $email = Auth::user()->email;
         }
 
         $oldCart = Session::get('cart');
         $cart = new \App\Cart($oldCart);
         $total = $cart->totalPrice;
         $rand = rand();
-        return view('pages.checkout', ['address' => $address, 'address2' => $address2, 'work' => $work, 'city' => $city, 'state' => $state, 'postcode' => $postcode, 'country' => $country, 'total' => $total, 'products' => $cart->items, 'qty' => $cart->totalQty, 'email' => Auth::user()->email, 'name' => $name, 'phone' => $phone, 'rand' => $rand,]);
+        return view('pages.checkout', ['address' => $address, 'address2' => $address2, 'work' => $work, 'city' => $city, 'state' => $state, 'postcode' => $postcode, 'country' => $country, 'total' => $total, 'products' => $cart->items, 'qty' => $cart->totalQty, 'email' => $email, 'name' => $name, 'phone' => $phone, 'rand' => $rand,]);
     }
 
     public function getReduceByOne($id) {
