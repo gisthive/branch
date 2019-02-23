@@ -18,14 +18,20 @@
     <a class="navbar-item" href="/account">
       {{ Auth::user()->name }}
     </a>
-    <a class="navbar-item" href="/logout">
-       Logout
+    <a class="navbar-item" href="{{ route('logout') }}"
+        onclick="event.preventDefault();
+        document.getElementById('logout-form').submit();">
+        {{ __('Logout') }}
     </a>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+      @csrf
+    </form>
     @else
-    <a class="navbar-item" href="/signup">
+    <a class="navbar-item" href="/register">
       Sign up
     </a>
-    <a class="navbar-item" href="/login">
+    <a class="navbar-item" href="{{route('login')}}">
        Log in
     </a>
     @endif
@@ -111,11 +117,17 @@
       <a class="navbar-item" href="/account">
         {{ Auth::user()->name }}
       </a>
-      <a class="navbar-item" href="/logout">
-         Logout
-      </a>
+      <a class="navbar-item" href="{{ route('logout') }}"
+        onclick="event.preventDefault();
+        document.getElementById('logout-form').submit();">
+        {{ __('Logout') }}
+    </a>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+      @csrf
+    </form>
       @else
-      <a class="navbar-item" href="/signup">
+      <a class="navbar-item" href="/register">
         Sign up
       </a>
       <a class="navbar-item" href="/login">

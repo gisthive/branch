@@ -1,5 +1,29 @@
-add delivery charge
-add discount option in vendor dashboard
-add tax charge
+--- add delivery charge
+add discount option in pharmacist dashboard
+--- add tax charge
+implement tax and delivery charge
 track order
 notifications
+redesign logo
+create pharmacist dashboard
+create review panel
+set up notifications
+--- Dr AI bot
+patient to Doctor chat
+set up medical information
+prescription list generator
+prescription list to closest pharmacy 
+auto locate nearest pharmacy
+finish up professionals page
+rewards page
+--- ux design
+tip delivery man
+upload/get prescription panel
+authentication field(btw user and doctor)
+--- forgot email
+--- verify email
+remove comments from config/database.php
+style auth page
+edit email pages
+work on blog
+--- declare cookie policy

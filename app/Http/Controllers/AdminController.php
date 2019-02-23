@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Ph_categories;
+use App\Variables;
 
 class AdminController extends Controller
 {
@@ -232,6 +233,20 @@ class AdminController extends Controller
         $del = \App\Ph_roles::find($id);
         $del->delete();
         return redirect(route('roles'))->with('success','Information has been  deleted');
+    }
+
+    public function displayVar(){
+        $var = new Variables;
+        $var = $var->get()->first();
+        return view('admin.pages.var', compact('var'));
+    }
+
+    public function storeVar(request $request){
+        $var = new Variables;
+        $var->delivery_charge = request('delivery_charge');
+        $var->tax_charge = request('tax_charge');
+        $var->save();
+        return redirect()->route('variables');
     }
 
   }   

@@ -10,11 +10,11 @@
 |
 */
 
-Route::get('/', 'AdminController@home')->name('home');
-Route::get('/home', 'AdminController@home');
+Route::get('/', 'AdminController@home');
+Route::get('/home', 'AdminController@home')->name('home')->middleware('verified');
 
-Route::get('/signup', 'RegistrationController@create');
-Route::get('/login', 'SessionsController@create');
+// Route::get('/signup', 'RegistrationController@create');
+// Route::get('/login', 'SessionsController@create');
 Route::get('/category/{name}', 'CategoryController@index');
 Route::get('/description/{id}/{name}', 'DescriptionController@index')->name('description');
 Route::get('/search', 'SearchController@index');
@@ -33,8 +33,8 @@ Route::get('/order', 'OrderController@index')->middleware('auth')->name('order')
 Route::get('/order/thanks/{id}', 'OrderController@thanks')->middleware('auth')->name('orderThanks');
 Route::get('/order/info/{id}', 'OrderController@info')->middleware('auth')->name('orderInfo');
 
-Route::post('signup', 'RegistrationController@store');
-Route::post('/login', 'SessionsController@verify')->name('login');
+// Route::post('signup', 'RegistrationController@store');
+// Route::post('/login', 'SessionsController@verify')->name('login');
 
 Route::get('/add-to-cart/{id}', 'CartController@store')->name('product.add');
 Route::get('/checkout', 'CartController@getCheckout');
@@ -52,6 +52,7 @@ Route::get('/edit/products', 'AdminController@products');
 Route::get('/edit/orders', 'AdminController@orders')->name('orders');
 Route::get('/edit/faq', 'AdminController@faq');
 Route::get('/edit/roles', 'AdminController@roles')->name('roles');
+Route::get('/edit/variables', 'AdminController@displayVar')->name('variables');
 
 Route::post('/edit/store/category', 'AdminController@storeCategory')->name('storeCategory');
 Route::post('/edit/store/delete', 'AdminController@destroyCategory')->name('deleteCategory');
@@ -66,6 +67,7 @@ Route::post('/edit/store/orderdelete', 'AdminController@destroyOrder')->name('de
 Route::post('/edit/store/faqedit', 'AdminController@updateFaq')->name('editFaq');
 Route::post('/edit/store/faq', 'AdminController@storeFaq')->name('storeFaq'); 
 Route::post('/edit/store/role', 'AdminController@storeRole')->name('storeRole'); 
+Route::post('/edit/store/var', 'AdminController@storeVar')->name('storeVar'); 
 Route::post('/edit/role/delete', 'AdminController@destroyRole')->name('delete_role');
 Route::post('/edit/role/account', 'AccountController@editAccount')->name('editAccount')->middleware('auth');
 Route::post('/edit/role/accountImage', 'AccountController@editAccountImage')->name('editAccountImage')->middleware('auth');
@@ -73,3 +75,6 @@ Route::post('/edit/role/accountImage', 'AccountController@editAccountImage')->na
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Auth::routes(['verify' => true]);
+
